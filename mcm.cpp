@@ -49,9 +49,9 @@ void MCM(int **m, int **s, int *p, int n)
         for (int i = 1, j = i + l - 1; i < n - l + 1; i++, j = i + l - 1)
         {
             m[i][j] = 2147483647; // di buku infinite, jadi pakai INT_MAX
-            for (int k = i; k <= j - 1; k++)
+            for (int k = i, q = 0; k <= j - 1; k++)
             {
-                int q = m[i][k] + m[k + 1][j] + p[i - 1] * p[k] * p[j];
+                q = m[i][k] + m[k + 1][j] + p[i - 1] * p[k] * p[j];
                 if (q < m[i][j])
                 {
                     m[i][j] = q;
